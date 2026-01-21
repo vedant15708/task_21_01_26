@@ -73,7 +73,7 @@ class _LifeCycleDemoState extends State<LifeCycleDemo> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: .center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               "Counter: $counter",
