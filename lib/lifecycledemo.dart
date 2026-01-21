@@ -90,6 +90,15 @@ class _LifeCycleDemoState extends State<LifeCycleDemo> {
               },
               label: const Text("Increment Counter"),
             ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (_) => const SecondScreen()),
+                );
+              },
+              child: const Text("Go to Second Screen"),
+            ),
           ],
         ),
       ),
@@ -100,6 +109,19 @@ class _LifeCycleDemoState extends State<LifeCycleDemo> {
   void dispose() {
     super.dispose();
     print("dispose() called");
-    showSnackBar("dispose() called");
+  }
+}
+
+class SecondScreen extends StatelessWidget {
+  const SecondScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text("Second Screen")),
+      body: Center(
+        child: ElevatedButton(onPressed: () {}, child: const Text("Go Back")),
+      ),
+    );
   }
 }
